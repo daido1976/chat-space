@@ -35,7 +35,7 @@
 |------|----|-------|
 |group_name|string|null: false|
 |member_id|integer|null: false, foreign_key: true|
-|message_id|integer|null: false, foreign_key: true|
+|message_id|integer|foreign_key: true|
 
 ### Association
 - has_many :users, through: :members
