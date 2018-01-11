@@ -7,7 +7,6 @@
 |name|string|null: false|
 |mail|string|null: false, unique: true|
 |password|string|null: false|
-|member_id|integer|foreign_key: true|
 
 ### Association
 - has_many :groups, through: :members
@@ -34,8 +33,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false|
-|member_id|integer|null: false, foreign_key: true|
-|message_id|integer|foreign_key: true|
 
 ### Association
 - has_many :users, through: :members
