@@ -2,13 +2,22 @@
 
 @import "./reset";
 
+// ---notification
+
+.notification {
+  height: 30px;
+  width: 100vw;
+  background-color:#38aef0;
+  display: block;
+}
+
 // ---chat-side
 
 .chat-side {
   height: 100vh;
   width:300px;
   float: left;
-  position: block;
+  display: block;
 
   .chat-side__user {
     height: 15%;
@@ -16,8 +25,8 @@
   }
 
   .chat-side__groups {
-    background-color: #2f3e51;
     height: 85%;
+    background-color: #2f3e51;
   }
 }
 
@@ -31,18 +40,19 @@
   .chat-main__header {
     height: 15%;
     background-color: red;
-    position: block;
+    display: block;
   }
 
   .chat-main__body {
     height: calc(100% - 15% - 90px);
+    background-color: #aaaaaa;
     overflow: auto;
   }
 
   .chat-main__footer {
     height: 90px;
-    background-color: blue;
-    position: block;
+    background-color: #38aef0;
+    display : block;
   }
 }
 
