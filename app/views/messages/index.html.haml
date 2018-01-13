@@ -2,10 +2,29 @@
 
 .chat-side
   .chat-side__user
-  .chat-side__groups
+    .chat-side__user--content
+      %span.chat-side__user--name daido
+      %span.chat-side__user--new-group
+      %i.fa.fa-plus-circle
+      %span.chat-side__user--edit-user
+      %i.fa.fa-cog
+  %ul.chat-side__groups
+    %li.chat-side__group
+      %p.chat-side__group-name aaa
+      %p.chat-side__group-message まだメッセージはありません。
+    %li.chat-side__group
+      %p.chat-side__group-name aaa
+      %p.chat-side__group-message まだメッセージはありません。
+
+
 
 .chat-main
   .chat-main__header
+    .chat-main__header--content
+      %h1.chat-main__header--title sample
+      %h4.chat-main__header--members members
+      %a.chat-main__header--edit-menu edit
+
   .chat-main__body
     %h1 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     %h1 bbbbbbbbbbbbbbbbbbbbbbbbbbb
