@@ -8,11 +8,11 @@
       %i.fa.fa-plus-circle
       %span.chat-side__user--edit-user
       %i.fa.fa-cog
-  %ul.chat-side__groups
-    %li.chat-side__group
+  .chat-side__groups
+    .chat-side__group
       %p.chat-side__group-name aaa
       %p.chat-side__group-message まだメッセージはありません。
-    %li.chat-side__group
+    .chat-side__group
       %p.chat-side__group-name aaa
       %p.chat-side__group-message まだメッセージはありません。
 
@@ -20,16 +20,34 @@
 
 .chat-main
   .chat-main__header
-    .chat-main__header--content
-      %h1.chat-main__header--title sample
-      %h4.chat-main__header--members members
-      %a.chat-main__header--edit-menu edit
+    .chat-main__header--group.clearfix
+      .chat-main__header--group-name
+        %h1 sample
+      %a.chat-main__header--group-edit
+        %p Edit
+    .chat-main__header--members
+      %h4 members
 
   .chat-main__body
-    %h1 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    %h1 bbbbbbbbbbbbbbbbbbbbbbbbbbb
-    %h1 cccccccccccccccccccccccccccccc
-    %h1 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-    %h1 bbbbbbbbbbbbbbbbbbbbbbbbbbb
-    %h1 cccccccccccccccccccccccccccccc
+    .chat-main__body--message-lists
+      .chat-main__body--message
+        .chat-main__body--message-user
+          %p daido
+        .chat-main__body--message-time
+          %p 2017/12/25
+        .chat-main__body--message-content
+          %p お腹すいた
+      .chat-main__body--message
+        .chat-main__body--message-user
+          %p daido
+        .chat-main__body--message-time
+          %p 2017/12/25
+        .chat-main__body--message-content
+          %p お腹すいた
+
   .chat-main__footer
+
+
+
+
+
