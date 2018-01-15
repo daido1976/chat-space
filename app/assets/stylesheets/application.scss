@@ -138,7 +138,6 @@
 
   .chat-main__body {
     height: calc(100% - 15% - 90px);
-    background-color: #aaaaaa;
     overflow: auto;
 
     .chat-main__body--message-lists {
@@ -176,5 +175,44 @@
   .chat-main__footer {
     height: 90px;
     display : block;
+    background-color: #aaaaaa;
+
+    .chat-main__footer-form {
+      padding: 20px 40px;
+      position: relative;
+
+      .chat-main__footer-body {
+        position: relative;
+
+      .message {
+        height: 50px;
+        width: calc(100% - 130px);
+        padding: 0 10px;
+        font-size: 16px;
+        color: #434a54;
+        border-style: none;
+      }
+
+      .chat-file {
+        margin: 12px 130px 20px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+       .submit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 50px;
+        padding:10px 20px;
+        margin-right:40px;
+        margin-top: 20px;
+        background-color:#38aef0;
+        color: white;
+        font-size: 16px;
+        border-style: none;
+      }
+    }
   }
 }
