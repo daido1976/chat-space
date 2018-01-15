@@ -1,13 +1,13 @@
 .chat-side
   .chat-side__user
     .chat-side__user--content
-      %span.chat-side__user--name daido
-      %span.chat-side__user--new-group
+      %span.chat-side__user--content--name daido
+      %span.chat-side__user--content--new-group
       %i.fa.fa-pencil-square-o
       %span.chat-side__user--edit-user
       %i.fa.fa-cog
   .chat-side__groups
-    .chat-side__group
+    .chat-side__groups--group
       %p.chat-side__group-name aaa
       %p.chat-side__group-message まだメッセージはありません。
     .chat-side__group
@@ -45,7 +45,7 @@
 
   .chat-main__footer
     %form.chat-main__footer-form
-      .chat-main__footer-body
+      .chat-main__footer-form--body
         %input{class: "message",placeholder: "type a message",type: "text"}
         %label{class: "chat-file",for: "message_image"}
           %input{class: "image",type: "file",id: "message_image",style: "display:none"}
