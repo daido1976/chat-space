@@ -1,8 +1,17 @@
 // ---notification
 
-.notification {
+ .flash {
   height: 30px;
   width: 100vw;
-  background-color:#38aef0;
+  color: white;
+  text-align: center;
   display: block;
+
+  &__notice {
+    background-color:#38aef0;
+  }
+
+  &__alert {
+    background-color: red;
+  }
 }
