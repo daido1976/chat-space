@@ -13,6 +13,6 @@
     .chat-side__groups--group
       - current_user.groups.each do |group|
         %p.chat-side__group-name
-          = group.group_name
+          = group.name
         %p.chat-side__group-message
           メッセージはまだありません。
