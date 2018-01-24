@@ -45,10 +45,13 @@
           %p お腹すいた
 
   .chat-main__footer
-    %form.chat-main__footer-form
-      .chat-main__footer-form--body
-        %input{class: "message", placeholder: "type a message", type: "text"}
-        %label{class: "chat-file", for: "message_image"}
-          %input{class: "image", type: "file", id: "message_image", style: "display:none"}
+    .chat-main__footer-form
+      = form_for [@group, @message] do |f|
+        .chat-main__footer-form--body
+          = f.text_field :body, placeholder: "type a message", class: "message"
+          = f.label :image, class: "chat-file" do
+            = f.file_field :image, style: "display: none", class: 'hidden'
             %i.fa.fa-picture-o
-      %input{class: "submit", type: "submit", value: "Send"}
+          = f.submit "Send", class: "submit"
+
+
