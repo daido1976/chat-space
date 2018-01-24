@@ -29,20 +29,7 @@
 
   .chat-main__body
     .chat-main__body--message-lists
-      .chat-main__body--message
-        .chat-main__body--message-user
-          %p daido
-        .chat-main__body--message-time
-          %p 2017/12/25
-        .chat-main__body--message-content
-          %p お腹すいた
-      .chat-main__body--message
-        .chat-main__body--message-user
-          %p daido
-        .chat-main__body--message-time
-          %p 2017/12/25
-        .chat-main__body--message-content
-          %p お腹すいた
+      = render @messages
 
   .chat-main__footer
     .chat-main__footer-form
@@ -52,6 +39,6 @@
           = f.label :image, class: "chat-file" do
             = f.file_field :image, style: "display: none", class: 'hidden'
             %i.fa.fa-picture-o
-          = f.submit "Send", class: "submit"
+        = f.submit "Send", class: "submit"
 
 
