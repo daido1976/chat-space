@@ -7,11 +7,12 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @group.users << current_user
+    @users = User.where.not(id:current_user.id)
   end
 
   def create
     @group = Group.new(group_params)
+    @group.users << current_user
     if @group.save
       redirect_to :root, notice: "グループを作成しました"
     else
