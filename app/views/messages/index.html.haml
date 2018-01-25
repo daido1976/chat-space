@@ -1,54 +1,34 @@
 = render "layouts/flash"
-.chat-side
-  .chat-side__user
-    .chat-side__user--content
-      %span.chat-side__user--content--name
-        = current_user.name
-      %span.chat-side__user--content--new-group
-        = link_to new_group_path do
-          %i.fa.fa-pencil-square-o
-      %span.chat-side__user--edit-user
-        = link_to edit_user_path(current_user) do
-          %i.fa.fa-cog
-  .chat-side__groups
-    .chat-side__groups--group
-      %p.chat-side__group-name aaa
-      %p.chat-side__group-message
-
-
+.wrapper
+  = render 'shared/side_bar'
 
 .chat-main
   .chat-main__header
     .chat-main__header--group.clearfix
       .chat-main__header--group-name
-        %h1 sample
-      %a.chat-main__header--group-edit
-        %p Edit
+        %h1
+          = @group.name
+      = link_to edit_group_path(@group) do
+        .chat-main__header--group-edit
+          %p Edit
     .chat-main__header--members
-      %h4 members
+      %h4
+        member:
+        - @members.each do |member|
+          = member.name
 
   .chat-main__body
     .chat-main__body--message-lists
-      .chat-main__body--message
-        .chat-main__body--message-user
-          %p daido
-        .chat-main__body--message-time
-          %p 2017/12/25
-        .chat-main__body--message-content
-          %p お腹すいた
-      .chat-main__body--message
-        .chat-main__body--message-user
-          %p daido
-        .chat-main__body--message-time
-          %p 2017/12/25
-        .chat-main__body--message-content
-          %p お腹すいた
+      = render @messages
 
   .chat-main__footer
-    %form.chat-main__footer-form
-      .chat-main__footer-form--body
-        %input{class: "message", placeholder: "type a message", type: "text"}
-        %label{class: "chat-file", for: "message_image"}
-          %input{class: "image", type: "file", id: "message_image", style: "display:none"}
+    .chat-main__footer-form
+      = form_for [@group, @message] do |f|
+        .chat-main__footer-form--body
+          = f.text_field :body, placeholder: "type a message", class: "message"
+          = f.label :image, class: "chat-file" do
+            = f.file_field :image, style: "display: none", class: 'hidden'
             %i.fa.fa-picture-o
-      %input{class: "submit", type: "submit", value: "Send"}
+        = f.submit "Send", class: "submit"
+
+
