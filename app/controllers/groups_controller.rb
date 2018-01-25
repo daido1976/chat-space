@@ -21,10 +21,12 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @users = User.where.not(id:current_user.id)
   end
 
   def update
     if @group.update(group_params)
+      @group.users << current_user
       redirect_to :root, notice: 'グループを編集しました'
     else
       render :edit

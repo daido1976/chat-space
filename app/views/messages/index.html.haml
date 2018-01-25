@@ -6,11 +6,16 @@
   .chat-main__header
     .chat-main__header--group.clearfix
       .chat-main__header--group-name
-        %h1 sample
-      %a.chat-main__header--group-edit
-        %p Edit
+        %h1
+          = @group.name
+      = link_to edit_group_path(@group) do
+        .chat-main__header--group-edit
+          %p Edit
     .chat-main__header--members
-      %h4 members
+      %h4
+        member:
+        - @members.each do |member|
+          = member.name
 
   .chat-main__body
     .chat-main__body--message-lists
