@@ -1,5 +1,8 @@
 $(function() {
   function buildHTML(message) {
+    if (message.image.url == null) {
+      message.image.url = ""
+    }
     var html =`
 <div class='chat-main__body--message'>
   <div class='chat-main__body--message-user'>
@@ -19,26 +22,6 @@ $(function() {
     </p>
   </div>
 </div>`
-    if (message.image.url == null) {
-      html = `
-<div class='chat-main__body--message'>
-  <div class='chat-main__body--message-user'>
-    <p>
-      ${message.user_name}
-    </p>
-  </div>
-  <div class='chat-main__body--message-time'>
-    <p>
-      ${message.time}
-    </p>
-  </div>
-  <div class='chat-main__body--message-content'>
-    <p>
-      ${message.body}
-    </p>
-  </div>
-</div>`
-    }
     return html;
   }
   $("#new_message").on("submit", function(e) {
