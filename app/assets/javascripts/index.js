@@ -28,3 +28,9 @@ $(function() {
     });
   });
 });
+
+$(function() {
+  $("#user-search-result").on("click", "a", function() {
+    $("#chat-group-user").append("")
+  })
+})
