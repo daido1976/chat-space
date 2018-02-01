@@ -20,6 +20,7 @@ gem "font-awesome-rails"
 gem "devise"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'erb2haml'
 
 group :development, :test do
   gem 'byebug', platform: :mri
