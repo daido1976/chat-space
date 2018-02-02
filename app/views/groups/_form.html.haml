@@ -25,6 +25,7 @@
       #chat-group-members
         .chat-group-user
           = current_user.name
+          %input{name: 'group[user_ids][]', type: 'hidden', value: "#{current_user.id}"}
 
 
   .chat-group-form__field.clearfix
