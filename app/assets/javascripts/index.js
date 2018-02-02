@@ -48,10 +48,10 @@ $(function() {
   });
 })
 
-$(function() {
-  $("#chat-group-members").on("click", ".chat-group-user__btn--remove", function() {
+  $(function() {
+    $("#chat-group-members").on("click", ".chat-group-user__btn--remove", function() {
 
-  var user_id = $(this).data("user-id");
-  $("#chat-group-member-" + user_id).remove();
+    var user_id = $(this).data("user-id");
+    $("#chat-group-member-" + user_id).remove();
   })
 })
