@@ -4,7 +4,7 @@ $(function() {
       message.image.url = ""
     }
     var html =`
-<div class='chat-main__body--message'>
+<div class='chat-main__body--message' data-message-id="${message.id}">
   <div class='chat-main__body--message-user'>
     <p>
       ${message.user_name}
@@ -49,4 +49,26 @@ $(function() {
       $(".submit").prop("disabled", false);
     })
   })
+
+  var interval = setInterval(function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)) {
+  $.ajax({
+    url: location.href,
+    dataType: "json"
+  })
+  .done(function(json) {
+    var id = $('.chat-main__body--message').last().data('message-id');
+    json.messages.forEach(function(message) {
+      if (message.id > id) {
+    $(".chat-main__body--message-lists").append(buildHTML(message));
+    }
+    });
+  })
+  .fail(function() {
+    alert("自動更新に失敗しました");
+  })
+  } else {
+    clearInterval(interval);
+  }}, 5000);
 })
+
